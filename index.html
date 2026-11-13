@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uz" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -39,6 +41,7 @@
         }
     </script>
 </head>
+
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
     <!-- ==================== 1. NAVIGATSIYA PANELI ==================== -->
@@ -47,54 +50,76 @@
             <div class="flex justify-between items-center h-20">
                 <!-- Logotip -->
                 <a href="#" class="flex items-center gap-2.5 group">
-                    <div class="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-emerald-400 shadow-md group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-navy-900 flex items-center justify-center text-emerald-400 shadow-md group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                         <i data-lucide="calculator" class="w-6 h-6"></i>
                     </div>
                     <div>
-                        <span class="text-xl font-extrabold tracking-tight text-navy-900">Hisob<span class="text-emerald-600">Pro</span></span>
-                        <span class="block text-[10px] font-medium text-slate-500 uppercase tracking-wider -mt-1">Moliya & Audit</span>
+                        <span class="text-xl font-extrabold tracking-tight text-navy-900">Moliya<span
+                                class="text-emerald-600">.uz</span></span>
+                        <span class="block text-[10px] font-medium text-slate-500 uppercase tracking-wider -mt-1">Moliya
+                            & Audit</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menyu -->
                 <nav class="hidden md:flex items-center gap-8">
-                    <a href="#xizmatlar" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Xizmatlar</a>
-                    <a href="#kalkulyator" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Kalkulyator</a>
-                    <a href="#tariflar" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Narxlar</a>
-                    <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Savollar</a>
-                    <a href="#aloqa" class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Aloqa</a>
+                    <a href="#xizmatlar"
+                        class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Xizmatlar</a>
+                    <a href="#kalkulyator"
+                        class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Kalkulyator</a>
+                    <a href="#tariflar"
+                        class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Narxlar</a>
+                    <a href="#faq"
+                        class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Savollar</a>
+                    <a href="#aloqa"
+                        class="text-sm font-medium text-slate-600 hover:text-emerald-600 transition-colors">Aloqa</a>
                 </nav>
 
                 <!-- Harakat tugmalari -->
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="tel:+998712000000" class="text-sm font-semibold text-navy-900 hover:text-emerald-600 transition-colors flex items-center gap-1.5">
+                    <a href="tel:+998712000000"
+                        class="text-sm font-semibold text-navy-900 hover:text-emerald-600 transition-colors flex items-center gap-1.5">
                         <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i>
                         +998 71 200-45-45
                     </a>
-                    <button onclick="openModal('Bepul maslahat olish')" class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold shadow-sm shadow-emerald-600/20 transition-all active:scale-95">
+                    <button onclick="openModal('Bepul maslahat olish')"
+                        class="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold shadow-sm shadow-emerald-600/20 transition-all active:scale-95">
                         Maslahat olish
                     </button>
                 </div>
 
                 <!-- Mobil menyu tugmasi -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                <button id="mobile-menu-btn"
+                    class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobil Menyu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
-            <a href="#xizmatlar" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Xizmatlar</a>
-            <a href="#kalkulyator" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Soliq Kalkulyatori</a>
-            <a href="#tariflar" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Tariflar va Narxlar</a>
-            <a href="#faq" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Ko'p beriladigan savollar</a>
-            <a href="#aloqa" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Aloqa</a>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 space-y-3 shadow-lg">
+            <a href="#xizmatlar"
+                class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Xizmatlar</a>
+            <a href="#kalkulyator"
+                class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Soliq
+                Kalkulyatori</a>
+            <a href="#tariflar"
+                class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Tariflar
+                va Narxlar</a>
+            <a href="#faq"
+                class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Ko'p
+                beriladigan savollar</a>
+            <a href="#aloqa"
+                class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-emerald-600">Aloqa</a>
             <div class="pt-3 border-t border-slate-100 flex flex-col gap-3">
-                <a href="tel:+998712004545" class="flex items-center justify-center gap-2 py-2.5 text-navy-900 font-semibold">
+                <a href="tel:+998712004545"
+                    class="flex items-center justify-center gap-2 py-2.5 text-navy-900 font-semibold">
                     <i data-lucide="phone" class="w-4 h-4 text-emerald-600"></i> +998 71 200-45-45
                 </a>
-                <button onclick="openModal('Bepul maslahat olish')" class="w-full py-3 rounded-xl bg-emerald-600 text-white font-semibold text-center shadow-md">
+                <button onclick="openModal('Bepul maslahat olish')"
+                    class="w-full py-3 rounded-xl bg-emerald-600 text-white font-semibold text-center shadow-md">
                     Bepul maslahat olish
                 </button>
             </div>
@@ -113,25 +138,31 @@
             <div class="grid lg:grid-cols-12 gap-12 items-center">
                 <!-- Chap ustun: Matn va CTA -->
                 <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-slate-700 text-emerald-400 text-xs sm:text-sm font-medium">
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-800 border border-slate-700 text-emerald-400 text-xs sm:text-sm font-medium">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                         O'zbekiston Soliq Qonunchiligiga 100% mos
                     </div>
-                    
+
                     <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-                        Biznesingiz moliyasi <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">ishonchli qo'llarda</span>
+                        Biznesingiz moliyasi <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">ishonchli
+                            qo'llarda</span>
                     </h1>
-                    
+
                     <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Soliq jarimalari va murakkab hisobotlarni unuting. Biz YaTT va MChJlar uchun to'liq buxgalteriya autsorsingi, soliq optimallashtirish va moliyaviy audit xizmatlarini taqdim etamiz.
+                        Soliq jarimalari va murakkab hisobotlarni unuting. Biz YaTT va MChJlar uchun to'liq buxgalteriya
+                        autsorsingi, soliq optimallashtirish va moliyaviy audit xizmatlarini taqdim etamiz.
                     </p>
 
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                        <button onclick="openModal('Tezkor ariza qoldirish')" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
+                        <button onclick="openModal('Tezkor ariza qoldirish')"
+                            class="w-full sm:w-auto px-7 py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-base shadow-lg shadow-emerald-600/30 transition-all flex items-center justify-center gap-2">
                             <span>Bepul auditga yozilish</span>
                             <i data-lucide="arrow-right" class="w-5 h-5"></i>
                         </button>
-                        <a href="#kalkulyator" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-navy-800 hover:bg-slate-800 border border-slate-700 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
+                        <a href="#kalkulyator"
+                            class="w-full sm:w-auto px-7 py-4 rounded-xl bg-navy-800 hover:bg-slate-800 border border-slate-700 text-white font-semibold text-base transition-all flex items-center justify-center gap-2">
                             <i data-lucide="calculator" class="w-5 h-5 text-emerald-400"></i>
                             <span>Narxni hisoblash</span>
                         </a>
@@ -156,11 +187,13 @@
 
                 <!-- O'ng ustun: Vizual Moliyaviy Karta (Dashboard Mockup) -->
                 <div class="lg:col-span-5">
-                    <div class="bg-navy-800/90 backdrop-blur-xl border border-slate-700/80 rounded-2xl p-6 shadow-2xl relative">
+                    <div
+                        class="bg-navy-800/90 backdrop-blur-xl border border-slate-700/80 rounded-2xl p-6 shadow-2xl relative">
                         <!-- Yuqori panel -->
                         <div class="flex items-center justify-between pb-4 border-b border-slate-700">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
                                     <i data-lucide="shield-check" class="w-6 h-6"></i>
                                 </div>
                                 <div>
@@ -168,17 +201,21 @@
                                     <p class="text-xs text-slate-400">my3.soliq.uz bilan integratsiya</p>
                                 </div>
                             </div>
-                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-semibold">Faol</span>
+                            <span
+                                class="px-2.5 py-1 rounded-md bg-emerald-500/20 text-emerald-400 text-xs font-semibold">Faol</span>
                         </div>
 
                         <!-- Ko'rsatkichlar -->
                         <div class="space-y-4 my-6">
-                            <div class="bg-navy-900/80 p-4 rounded-xl border border-slate-700/50 flex justify-between items-center">
+                            <div
+                                class="bg-navy-900/80 p-4 rounded-xl border border-slate-700/50 flex justify-between items-center">
                                 <div>
                                     <span class="text-xs text-slate-400 block">Tejalgan soliq summasi (yillik)</span>
-                                    <span class="text-lg sm:text-xl font-bold text-white mt-0.5 block">148 500 000 so'm</span>
+                                    <span class="text-lg sm:text-xl font-bold text-white mt-0.5 block">148 500 000
+                                        so'm</span>
                                 </div>
-                                <span class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg flex items-center gap-1">
+                                <span
+                                    class="text-xs font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg flex items-center gap-1">
                                     <i data-lucide="trending-up" class="w-3.5 h-3.5"></i> +24%
                                 </span>
                             </div>
@@ -198,10 +235,12 @@
                         </div>
 
                         <!-- Kafolat eslatmasi -->
-                        <div class="p-3.5 rounded-xl bg-gradient-to-r from-emerald-600/20 to-teal-600/10 border border-emerald-500/30 flex items-start gap-3">
+                        <div
+                            class="p-3.5 rounded-xl bg-gradient-to-r from-emerald-600/20 to-teal-600/10 border border-emerald-500/30 flex items-start gap-3">
                             <i data-lucide="award" class="w-5 h-5 text-emerald-400 shrink-0 mt-0.5"></i>
                             <p class="text-xs text-slate-300 leading-relaxed">
-                                <strong class="text-white">Moliyaviy javobgarlik:</strong> Agar bizning aybimiz bilan soliq jarimasi yuzaga kelsa, uni 100% kompaniyamiz hisobidan qoplab beramiz.
+                                <strong class="text-white">Moliyaviy javobgarlik:</strong> Agar bizning aybimiz bilan
+                                soliq jarimasi yuzaga kelsa, uni 100% kompaniyamiz hisobidan qoplab beramiz.
                             </p>
                         </div>
                     </div>
@@ -215,93 +254,119 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Bizning Xizmatlar</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Biznesingiz uchun kompleks moliyaviy yechimlar</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Biznesingiz uchun kompleks moliyaviy
+                    yechimlar</h2>
                 <p class="text-slate-600 mt-4 text-base sm:text-lg">
-                    Kichik startaplardan tortib yirik ishlab chiqarish korxonalarigacha bo'lgan barcha bosqichlarda professional buxgalteriya yordamini ko'rsatamiz.
+                    Kichik startaplardan tortib yirik ishlab chiqarish korxonalarigacha bo'lgan barcha bosqichlarda
+                    professional buxgalteriya yordamini ko'rsatamiz.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Xizmat 1 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="book-open-check" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Buxgalteriya hisobini yuritish</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        1C:Buxgalteriya tizimida birlamchi hujjatlarni kiritish, bank-mijoz operatsiyalari, elektron hisob-fakturalar (EHF) va ombor hisobini to'liq yuritish.
+                        1C:Buxgalteriya tizimida birlamchi hujjatlarni kiritish, bank-mijoz operatsiyalari, elektron
+                        hisob-fakturalar (EHF) va ombor hisobini to'liq yuritish.
                     </p>
-                    <button onclick="openModal('Buxgalteriya hisobini yuritish')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Buxgalteriya hisobini yuritish')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <!-- Xizmat 2 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="file-spreadsheet" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Soliq hisobotlari</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        QQS, foyda solig'i, aylanmadan olinadigan soliq, mol-mulk va yer soliqlari bo'yicha oylik hamda choraklik hisobotlarni o'z vaqtida tayyorlash va topshirish.
+                        QQS, foyda solig'i, aylanmadan olinadigan soliq, mol-mulk va yer soliqlari bo'yicha oylik hamda
+                        choraklik hisobotlarni o'z vaqtida tayyorlash va topshirish.
                     </p>
-                    <button onclick="openModal('Soliq hisobotlari xizmati')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Soliq hisobotlari xizmati')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <!-- Xizmat 3 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="users" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Kadrlar hisobi va oylik maosh</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        my.mehnat.uz tizimida mehnat shartnomalarini rasmiylashtirish, tabel yuritish, ish haqi, ta'til pullari va JShDS (daromad solig'i) hisob-kitoblari.
+                        my.mehnat.uz tizimida mehnat shartnomalarini rasmiylashtirish, tabel yuritish, ish haqi, ta'til
+                        pullari va JShDS (daromad solig'i) hisob-kitoblari.
                     </p>
-                    <button onclick="openModal('Kadrlar hisobi va oylik maosh')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Kadrlar hisobi va oylik maosh')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <!-- Xizmat 4 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="search-check" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Moliyaviy audit va tiklash</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        Avvalgi davrlar buxgalteriyasini tekshirish, xatoliklarni aniqlash, soliq tekshiruvlariga tayyorlash va tashlab qo'yilgan hisobni noldan tiklash.
+                        Avvalgi davrlar buxgalteriyasini tekshirish, xatoliklarni aniqlash, soliq tekshiruvlariga
+                        tayyorlash va tashlab qo'yilgan hisobni noldan tiklash.
                     </p>
-                    <button onclick="openModal('Moliyaviy audit va tiklash')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Moliyaviy audit va tiklash')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <!-- Xizmat 5 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="building-2" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Firma ochish va ro'yxatdan o'tkazish</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        MChJ, XK yoki YaTTni 1 kun ichida davlat ro'yxatidan o'tkazish, ustav hujjatlarini tayyorlash, ERI kaliti olish va bank hisob raqamini ochish.
+                        MChJ, XK yoki YaTTni 1 kun ichida davlat ro'yxatidan o'tkazish, ustav hujjatlarini tayyorlash,
+                        ERI kaliti olish va bank hisob raqamini ochish.
                     </p>
-                    <button onclick="openModal('Firma ochish va ro\'yxatdan o\'tkazish')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Firma ochish va ro\'yxatdan o\'tkazish')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
                 <!-- Xizmat 6 -->
-                <div class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
-                    <div class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
+                <div
+                    class="group p-7 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-white hover:border-emerald-500/50 hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-300">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-navy-900 text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white flex items-center justify-center transition-colors mb-6">
                         <i data-lucide="briefcase" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Moliyaviy konsalting</h3>
                     <p class="text-slate-600 text-sm leading-relaxed mb-5">
-                        Soliq yuklamasini qonuniy kamaytirish, eksport-import shartnomalarini E-kontrakt tizimida ro'yxatdan o'tkazish va biznes-reja tuzish.
+                        Soliq yuklamasini qonuniy kamaytirish, eksport-import shartnomalarini E-kontrakt tizimida
+                        ro'yxatdan o'tkazish va biznes-reja tuzish.
                     </p>
-                    <button onclick="openModal('Moliyaviy konsalting')" class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
+                    <button onclick="openModal('Moliyaviy konsalting')"
+                        class="text-sm font-semibold text-emerald-600 group-hover:text-emerald-700 flex items-center gap-1.5">
                         Batafsil ma'lumot <i data-lucide="chevron-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -314,9 +379,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-12">
                 <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Onlayn Hisob-Kitob</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Xizmat narxi va soliq kalkulyatori</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Xizmat narxi va soliq kalkulyatori
+                </h2>
                 <p class="text-slate-600 mt-3 text-base">
-                    Korxonangiz parametrlarini tanlang va oylik buxgalteriya xizmati narxi hamda soliq rejimi bo'yicha dastlabki hisob-kitobni darhol bilib oling.
+                    Korxonangiz parametrlarini tanlang va oylik buxgalteriya xizmati narxi hamda soliq rejimi bo'yicha
+                    dastlabki hisob-kitobni darhol bilib oling.
                 </p>
             </div>
 
@@ -326,17 +393,21 @@
                     <div class="lg:col-span-7 p-6 sm:p-10 space-y-8">
                         <!-- 1. Korxona turi -->
                         <div>
-                            <label class="block text-sm font-bold text-navy-900 mb-3">1. Tashkiliy-huquqiy shakl va soliq rejimi:</label>
+                            <label class="block text-sm font-bold text-navy-900 mb-3">1. Tashkiliy-huquqiy shakl va
+                                soliq rejimi:</label>
                             <div class="grid sm:grid-cols-3 gap-3">
-                                <button type="button" onclick="selectEntity('yatt')" id="btn-yatt" class="entity-btn p-4 rounded-xl border-2 border-slate-200 text-left transition-all hover:border-emerald-400">
+                                <button type="button" onclick="selectEntity('yatt')" id="btn-yatt"
+                                    class="entity-btn p-4 rounded-xl border-2 border-slate-200 text-left transition-all hover:border-emerald-400">
                                     <div class="font-bold text-navy-900 text-sm">YaTT</div>
                                     <div class="text-xs text-slate-500 mt-1">Qat'iy yoki 4% soliq</div>
                                 </button>
-                                <button type="button" onclick="selectEntity('mchj_aylanma')" id="btn-mchj_aylanma" class="entity-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50/50 text-left transition-all">
+                                <button type="button" onclick="selectEntity('mchj_aylanma')" id="btn-mchj_aylanma"
+                                    class="entity-btn p-4 rounded-xl border-2 border-emerald-600 bg-emerald-50/50 text-left transition-all">
                                     <div class="font-bold text-navy-900 text-sm">MChJ (Aylanmadan)</div>
                                     <div class="text-xs text-slate-500 mt-1">4% aylanma solig'i</div>
                                 </button>
-                                <button type="button" onclick="selectEntity('mchj_qqs')" id="btn-mchj_qqs" class="entity-btn p-4 rounded-xl border-2 border-slate-200 text-left transition-all hover:border-emerald-400">
+                                <button type="button" onclick="selectEntity('mchj_qqs')" id="btn-mchj_qqs"
+                                    class="entity-btn p-4 rounded-xl border-2 border-slate-200 text-left transition-all hover:border-emerald-400">
                                     <div class="font-bold text-navy-900 text-sm">MChJ (QQS + Foyda)</div>
                                     <div class="text-xs text-slate-500 mt-1">12% QQS va 15% Foyda</div>
                                 </button>
@@ -346,10 +417,13 @@
                         <!-- 2. Xodimlar soni -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="employees-range" class="text-sm font-bold text-navy-900">2. Rasmiy xodimlar soni:</label>
-                                <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-sm font-bold"><span id="employees-val">5</span> nafar</span>
+                                <label for="employees-range" class="text-sm font-bold text-navy-900">2. Rasmiy xodimlar
+                                    soni:</label>
+                                <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-sm font-bold"><span
+                                        id="employees-val">5</span> nafar</span>
                             </div>
-                            <input type="range" id="employees-range" min="1" max="50" value="5" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                            <input type="range" id="employees-range" min="1" max="50" value="5"
+                                class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
                             <div class="flex justify-between text-xs text-slate-400 mt-1.5">
                                 <span>1 xodim</span>
                                 <span>15 xodim</span>
@@ -361,10 +435,13 @@
                         <!-- 3. Oylik hujjatlar hajmi -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="docs-range" class="text-sm font-bold text-navy-900">3. Oylik operatsiyalar (EHF / shartnoma) soni:</label>
-                                <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-sm font-bold"><span id="docs-val">30</span> ta</span>
+                                <label for="docs-range" class="text-sm font-bold text-navy-900">3. Oylik operatsiyalar
+                                    (EHF / shartnoma) soni:</label>
+                                <span class="px-3 py-1 rounded-lg bg-navy-900 text-white text-sm font-bold"><span
+                                        id="docs-val">30</span> ta</span>
                             </div>
-                            <input type="range" id="docs-range" min="5" max="200" step="5" value="30" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                            <input type="range" id="docs-range" min="5" max="200" step="5" value="30"
+                                class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
                             <div class="flex justify-between text-xs text-slate-400 mt-1.5">
                                 <span>5 ta</span>
                                 <span>50 ta</span>
@@ -376,10 +453,14 @@
                         <!-- 4. Taxminiy oylik aylanma (Soliq yuklamasi hisobi uchun) -->
                         <div>
                             <div class="flex justify-between items-center mb-2">
-                                <label for="turnover-range" class="text-sm font-bold text-navy-900">4. Taxminiy oylik pul aylanmasi (mln so'mda):</label>
-                                <span class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-sm font-bold"><span id="turnover-val">80</span> mln so'm</span>
+                                <label for="turnover-range" class="text-sm font-bold text-navy-900">4. Taxminiy oylik
+                                    pul aylanmasi (mln so'mda):</label>
+                                <span
+                                    class="px-3 py-1 rounded-lg bg-emerald-100 text-emerald-800 text-sm font-bold"><span
+                                        id="turnover-val">80</span> mln so'm</span>
                             </div>
-                            <input type="range" id="turnover-range" min="10" max="1000" step="10" value="80" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
+                            <input type="range" id="turnover-range" min="10" max="1000" step="10" value="80"
+                                class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600">
                             <div class="flex justify-between text-xs text-slate-400 mt-1.5">
                                 <span>10 mln</span>
                                 <span>250 mln</span>
@@ -392,24 +473,29 @@
                     <!-- O'ng tomon: Natijalar paneli -->
                     <div class="lg:col-span-5 bg-navy-900 text-white p-6 sm:p-10 flex flex-col justify-between">
                         <div>
-                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-800 text-emerald-400 text-xs font-semibold mb-6">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-800 text-emerald-400 text-xs font-semibold mb-6">
                                 <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Real vaqtdagi hisob-kitob
                             </div>
 
                             <div class="mb-6">
                                 <span class="text-sm text-slate-400 block">Buxgalteriya xizmati oylik narxi:</span>
                                 <div class="text-3xl sm:text-4xl font-extrabold text-white mt-1">
-                                    <span id="service-price">1 850 000</span> <span class="text-lg font-normal text-slate-400">so'm/oy</span>
+                                    <span id="service-price">1 850 000</span> <span
+                                        class="text-lg font-normal text-slate-400">so'm/oy</span>
                                 </div>
-                                <span class="text-xs text-emerald-400 mt-1 block">✓ Shtatdagi buxgalterdan 3 baravar arzon</span>
+                                <span class="text-xs text-emerald-400 mt-1 block">✓ Shtatdagi buxgalterdan 3 baravar
+                                    arzon</span>
                             </div>
 
                             <div class="border-t border-slate-800 pt-6 space-y-4">
-                                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Dastlabki soliq yuklamasi tahlili:</h4>
-                                
+                                <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-400">Dastlabki
+                                    soliq yuklamasi tahlili:</h4>
+
                                 <div class="flex justify-between items-center text-sm">
                                     <span class="text-slate-300">Soliq rejimi:</span>
-                                    <span id="tax-regime-label" class="font-semibold text-white">Aylanmadan soliq (4%)</span>
+                                    <span id="tax-regime-label" class="font-semibold text-white">Aylanmadan soliq
+                                        (4%)</span>
                                 </div>
 
                                 <div class="flex justify-between items-center text-sm">
@@ -419,18 +505,21 @@
 
                                 <div class="flex justify-between items-center text-sm">
                                     <span class="text-slate-300">Tavsiya etilgan tarif:</span>
-                                    <span id="recommended-plan" class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold text-xs">Biznes</span>
+                                    <span id="recommended-plan"
+                                        class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-semibold text-xs">Biznes</span>
                                 </div>
                             </div>
                         </div>
 
                         <div class="mt-8 pt-6 border-t border-slate-800">
-                            <button onclick="orderFromCalculator()" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2">
+                            <button onclick="orderFromCalculator()"
+                                class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2">
                                 <span>Ushbu hisob-kitob bilan ariza qoldirish</span>
                                 <i data-lucide="arrow-right" class="w-5 h-5"></i>
                             </button>
                             <p class="text-[11px] text-slate-400 text-center mt-3">
-                                Birinchi oy xizmatlariga <strong class="text-white">20% chegirma</strong> taqdim etiladi!
+                                Birinchi oy xizmatlariga <strong class="text-white">20% chegirma</strong> taqdim
+                                etiladi!
                             </p>
                         </div>
                     </div>
@@ -444,21 +533,26 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Shaffof Narxlar</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Biznesingiz hajmiga mos tarif rejasi</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-navy-900 mt-2">Biznesingiz hajmiga mos tarif rejasi
+                </h2>
                 <p class="text-slate-600 mt-4 text-base">
-                    Yashirin to'lovlarsiz. Barcha tariflar shartnoma asosida moliyaviy javobgarlik sug'urtasi bilan himoyalangan.
+                    Yashirin to'lovlarsiz. Barcha tariflar shartnoma asosida moliyaviy javobgarlik sug'urtasi bilan
+                    himoyalangan.
                 </p>
             </div>
 
             <div class="grid lg:grid-cols-3 gap-8 items-stretch">
                 <!-- Tarif 1: Start -->
-                <div class="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div
+                    class="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-shadow">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold text-navy-900">Start</h3>
-                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">YaTT va yangi MChJ</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">YaTT
+                                va yangi MChJ</span>
                         </div>
-                        <p class="text-sm text-slate-500 mb-6">Endi faoliyat boshlagan tadbirkorlar va kichik biznes uchun ideal tanlov.</p>
+                        <p class="text-sm text-slate-500 mb-6">Endi faoliyat boshlagan tadbirkorlar va kichik biznes
+                            uchun ideal tanlov.</p>
                         <div class="mb-6 pb-6 border-b border-slate-100">
                             <span class="text-3xl sm:text-4xl font-extrabold text-navy-900">1 200 000</span>
                             <span class="text-sm text-slate-500"> so'm / oyiga</span>
@@ -486,22 +580,28 @@
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Tarif: Start (1 200 000 so\'m)')" class="w-full py-3.5 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold transition-colors">
+                    <button onclick="openModal('Tarif: Start (1 200 000 so\'m)')"
+                        class="w-full py-3.5 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold transition-colors">
                         Start tarifini tanlash
                     </button>
                 </div>
 
                 <!-- Tarif 2: Biznes (Ommabop) -->
-                <div class="rounded-3xl border-2 border-emerald-600 bg-navy-900 text-white p-8 flex flex-col justify-between shadow-2xl relative lg:-translate-y-4">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider shadow-md">
+                <div
+                    class="rounded-3xl border-2 border-emerald-600 bg-navy-900 text-white p-8 flex flex-col justify-between shadow-2xl relative lg:-translate-y-4">
+                    <div
+                        class="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold uppercase tracking-wider shadow-md">
                         Eng ko'p tanlangan
                     </div>
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold text-white">Biznes</h3>
-                            <span class="px-3 py-1 rounded-full bg-navy-800 text-emerald-400 text-xs font-semibold">O'sish bosqichida</span>
+                            <span
+                                class="px-3 py-1 rounded-full bg-navy-800 text-emerald-400 text-xs font-semibold">O'sish
+                                bosqichida</span>
                         </div>
-                        <p class="text-sm text-slate-300 mb-6">Faol savdo, xizmat ko'rsatish va kichik ishlab chiqarish korxonalari uchun.</p>
+                        <p class="text-sm text-slate-300 mb-6">Faol savdo, xizmat ko'rsatish va kichik ishlab chiqarish
+                            korxonalari uchun.</p>
                         <div class="mb-6 pb-6 border-b border-slate-800">
                             <span class="text-3xl sm:text-4xl font-extrabold text-white">2 800 000</span>
                             <span class="text-sm text-slate-400"> so'm / oyiga</span>
@@ -529,19 +629,23 @@
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Tarif: Biznes (2 800 000 so\'m)')" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg shadow-emerald-600/30 transition-all">
+                    <button onclick="openModal('Tarif: Biznes (2 800 000 so\'m)')"
+                        class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg shadow-emerald-600/30 transition-all">
                         Biznes tarifini tanlash
                     </button>
                 </div>
 
                 <!-- Tarif 3: Korporativ -->
-                <div class="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-shadow">
+                <div
+                    class="rounded-3xl border border-slate-200 bg-white p-8 flex flex-col justify-between hover:shadow-xl transition-shadow">
                     <div>
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold text-navy-900">Korporativ</h3>
-                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Yirik kompaniyalar</span>
+                            <span class="px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold">Yirik
+                                kompaniyalar</span>
                         </div>
-                        <p class="text-sm text-slate-500 mb-6">Tashqi iqtisodiy faoliyat (VED), ishlab chiqarish va tarmoqli bizneslar uchun.</p>
+                        <p class="text-sm text-slate-500 mb-6">Tashqi iqtisodiy faoliyat (VED), ishlab chiqarish va
+                            tarmoqli bizneslar uchun.</p>
                         <div class="mb-6 pb-6 border-b border-slate-100">
                             <span class="text-3xl sm:text-4xl font-extrabold text-navy-900">5 500 000</span>
                             <span class="text-sm text-slate-500"> so'm dan</span>
@@ -569,7 +673,8 @@
                             </li>
                         </ul>
                     </div>
-                    <button onclick="openModal('Tarif: Korporativ')" class="w-full py-3.5 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold transition-colors">
+                    <button onclick="openModal('Tarif: Korporativ')"
+                        class="w-full py-3.5 rounded-xl border-2 border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white font-semibold transition-colors">
                         Individual taklif olish
                     </button>
                 </div>
@@ -583,7 +688,8 @@
             <!-- Mijozlar fikri -->
             <div class="mb-20">
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Mijozlar Ishonchi</span>
+                    <span class="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Mijozlar
+                        Ishonchi</span>
                     <h2 class="text-3xl font-extrabold text-navy-900 mt-2">Hamkorlarimiz biz haqimizda</h2>
                 </div>
 
@@ -598,10 +704,14 @@
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         </div>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            "Avval shtatdagi buxgalter xatosi tufayli soliqdan katta jarima to'lagan edik. HisobPro jamoasi 2 yillik hisobotlarimizni tiklab berdi. Hozir 3 yildan beri birga ishlaymiz, hammasi joyida."
+                            "Avval shtatdagi buxgalter xatosi tufayli soliqdan katta jarima to'lagan edik. HisobPro
+                            jamoasi 2 yillik hisobotlarimizni tiklab berdi. Hozir 3 yildan beri birga ishlaymiz, hammasi
+                            joyida."
                         </p>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm">AK</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm">
+                                AK</div>
                             <div>
                                 <div class="font-bold text-navy-900 text-sm">Azizbek Karimov</div>
                                 <div class="text-xs text-slate-500">"MegaBuild Stroy" MChJ rahbari</div>
@@ -619,10 +729,13 @@
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         </div>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            "IT kompaniyamiz uchun IT-Park rezidentligi soliq imtiyozlarini rasmiylashtirish va oylik hisobotlarni yuritishda HisobPro katta yordam berdi. Tezkor va zamonaviy jamoa."
+                            "IT kompaniyamiz uchun IT-Park rezidentligi soliq imtiyozlarini rasmiylashtirish va oylik
+                            hisobotlarni yuritishda HisobPro katta yordam berdi. Tezkor va zamonaviy jamoa."
                         </p>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">DR</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+                                DR</div>
                             <div>
                                 <div class="font-bold text-navy-900 text-sm">Dilnoza Raximova</div>
                                 <div class="text-xs text-slate-500">"NextGen Soft" asoschisi</div>
@@ -640,10 +753,13 @@
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         </div>
                         <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                            "Import operatsiyalari va QQS hisob-kitoblari juda murakkab edi. HisobPro mutaxassislari barcha jarayonlarni avtomatlashtirib berishdi. Xarajatlarimiz 40% ga qisqardi."
+                            "Import operatsiyalari va QQS hisob-kitoblari juda murakkab edi. HisobPro mutaxassislari
+                            barcha jarayonlarni avtomatlashtirib berishdi. Xarajatlarimiz 40% ga qisqardi."
                         </p>
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm">JT</div>
+                            <div
+                                class="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm">
+                                JT</div>
                             <div>
                                 <div class="font-bold text-navy-900 text-sm">Jamshid Tursunov</div>
                                 <div class="text-xs text-slate-500">"Orient Trade Impex" direktori</div>
@@ -663,45 +779,66 @@
                 <div class="space-y-4" id="faq-container">
                     <!-- Savol 1 -->
                     <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                        <button type="button" onclick="toggleFaq(1)" class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <button type="button" onclick="toggleFaq(1)"
+                            class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
                             <span>Autsorsing buxgalteriya shtatdagi buxgalterdan nimasi bilan afzal?</span>
-                            <i data-lucide="chevron-down" id="faq-icon-1" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+                            <i data-lucide="chevron-down" id="faq-icon-1"
+                                class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
                         </button>
-                        <div id="faq-content-1" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Shtatdagi buxgalterga oylik maoshdan tashqari 12% ijtimoiy soliq, kompyuter, 1C litsenziyasi va ofis joyi uchun xarajat qilasiz. Shuningdek, u kasal bo'lishi yoki ishdan bo'shab ketishi mumkin. Bizda esa sizga butun bir jamoa xizmat ko'rsatadi, xarajatlar 2-3 baravar arzon va shartnoma bo'yicha moliyaviy javobgarlik mavjud.
+                        <div id="faq-content-1"
+                            class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Shtatdagi buxgalterga oylik maoshdan tashqari 12% ijtimoiy soliq, kompyuter, 1C litsenziyasi
+                            va ofis joyi uchun xarajat qilasiz. Shuningdek, u kasal bo'lishi yoki ishdan bo'shab ketishi
+                            mumkin. Bizda esa sizga butun bir jamoa xizmat ko'rsatadi, xarajatlar 2-3 baravar arzon va
+                            shartnoma bo'yicha moliyaviy javobgarlik mavjud.
                         </div>
                     </div>
 
                     <!-- Savol 2 -->
                     <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                        <button type="button" onclick="toggleFaq(2)" class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <button type="button" onclick="toggleFaq(2)"
+                            class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
                             <span>Agar soliq organlari tomonidan jarima hisoblansa, kim to'laydi?</span>
-                            <i data-lucide="chevron-down" id="faq-icon-2" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+                            <i data-lucide="chevron-down" id="faq-icon-2"
+                                class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
                         </button>
-                        <div id="faq-content-2" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Rasmiy xizmat ko'rsatish shartnomamizning maxsus bandiga ko'ra, agar hisobotlarning kechikishi yoki noto'g'ri topshirilishi bizning mutaxassislarimiz aybi bilan yuzaga kelsa, barcha penya va jarimalarni "HisobPro" kompaniyasi o'z hisobidan 100% qoplab beradi.
+                        <div id="faq-content-2"
+                            class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Rasmiy xizmat ko'rsatish shartnomamizning maxsus bandiga ko'ra, agar hisobotlarning
+                            kechikishi yoki noto'g'ri topshirilishi bizning mutaxassislarimiz aybi bilan yuzaga kelsa,
+                            barcha penya va jarimalarni "HisobPro" kompaniyasi o'z hisobidan 100% qoplab beradi.
                         </div>
                     </div>
 
                     <!-- Savol 3 -->
                     <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                        <button type="button" onclick="toggleFaq(3)" class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <button type="button" onclick="toggleFaq(3)"
+                            class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
                             <span>Boshqa viloyatlardagi korxonalar bilan ham masofaviy ishlaysizlarmi?</span>
-                            <i data-lucide="chevron-down" id="faq-icon-3" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+                            <i data-lucide="chevron-down" id="faq-icon-3"
+                                class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
                         </button>
-                        <div id="faq-content-3" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Ha, albatta! Hozirgi kunda barcha hisob-fakturalar (Didox, Faktura.uz), soliq hisobotlari (my3.soliq.uz) va bank to'lovlari elektron shaklda amalga oshiriladi. Biz O'zbekistonning barcha viloyatlaridagi 150 dan ortiq kompaniyalar bilan muvaffaqiyatli masofaviy ishlaymiz.
+                        <div id="faq-content-3"
+                            class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Ha, albatta! Hozirgi kunda barcha hisob-fakturalar (Didox, Faktura.uz), soliq hisobotlari
+                            (my3.soliq.uz) va bank to'lovlari elektron shaklda amalga oshiriladi. Biz O'zbekistonning
+                            barcha viloyatlaridagi 150 dan ortiq kompaniyalar bilan muvaffaqiyatli masofaviy ishlaymiz.
                         </div>
                     </div>
 
                     <!-- Savol 4 -->
                     <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden">
-                        <button type="button" onclick="toggleFaq(4)" class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
+                        <button type="button" onclick="toggleFaq(4)"
+                            class="w-full px-6 py-5 text-left flex justify-between items-center gap-4 font-bold text-navy-900 hover:text-emerald-600 transition-colors">
                             <span>Kompaniyamizning moliyaviy ma'lumotlari maxfiyligi qanday saqlanadi?</span>
-                            <i data-lucide="chevron-down" id="faq-icon-4" class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
+                            <i data-lucide="chevron-down" id="faq-icon-4"
+                                class="w-5 h-5 text-slate-400 transition-transform duration-200 shrink-0"></i>
                         </button>
-                        <div id="faq-content-4" class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
-                            Har bir mijoz bilan alohida Maxfiylik to'g'risidagi kelishuv (NDA) imzolanadi. Barcha 1C bazalari shifrlangan himoyalangan bulutli serverlarda saqlanadi va uchinchi shaxslarga ma'lumot berilishi qat'iyan taqiqlanadi.
+                        <div id="faq-content-4"
+                            class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                            Har bir mijoz bilan alohida Maxfiylik to'g'risidagi kelishuv (NDA) imzolanadi. Barcha 1C
+                            bazalari shifrlangan himoyalangan bulutli serverlarda saqlanadi va uchinchi shaxslarga
+                            ma'lumot berilishi qat'iyan taqiqlanadi.
                         </div>
                     </div>
                 </div>
@@ -720,22 +857,26 @@
                         Bepul maslahat va korxonangiz auditi uchun ariza qoldiring
                     </h2>
                     <p class="text-slate-300 text-base leading-relaxed">
-                        Mutaxassisimiz 15 daqiqa ichida siz bilan bog'lanib, soliq rejimingizni tahlil qiladi va xarajatlarni qanday kamaytirish mumkinligini tushuntirib beradi.
+                        Mutaxassisimiz 15 daqiqa ichida siz bilan bog'lanib, soliq rejimingizni tahlil qiladi va
+                        xarajatlarni qanday kamaytirish mumkinligini tushuntirib beradi.
                     </p>
 
                     <div class="space-y-4 pt-4">
                         <div class="flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
                                 <i data-lucide="map-pin" class="w-5 h-5"></i>
                             </div>
                             <div>
                                 <div class="font-semibold text-white">Ofis manzilimiz</div>
-                                <div class="text-sm text-slate-400 mt-0.5">Toshkent sh., Amir Temur shoh ko'chasi, 107B-uy, Biznes Markaz, 4-qavat</div>
+                                <div class="text-sm text-slate-400 mt-0.5">Toshkent sh., Amir Temur shoh ko'chasi,
+                                    107B-uy, Biznes Markaz, 4-qavat</div>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
                                 <i data-lucide="phone-call" class="w-5 h-5"></i>
                             </div>
                             <div>
@@ -745,12 +886,14 @@
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
+                            <div
+                                class="w-11 h-11 rounded-xl bg-navy-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
                                 <i data-lucide="clock" class="w-5 h-5"></i>
                             </div>
                             <div>
                                 <div class="font-semibold text-white">Ish vaqti</div>
-                                <div class="text-sm text-slate-400 mt-0.5">Dushanba – Shanba: 09:00 dan 18:00 gacha</div>
+                                <div class="text-sm text-slate-400 mt-0.5">Dushanba – Shanba: 09:00 dan 18:00 gacha
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -760,25 +903,35 @@
                 <div class="lg:col-span-6">
                     <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-10 shadow-2xl">
                         <h3 class="text-2xl font-bold text-navy-900 mb-2">Savolingiz bormi?</h3>
-                        <p class="text-sm text-slate-500 mb-6">Ma'lumotlaringizni qoldiring, bosh buxgalterimiz sizga qo'ng'iroq qiladi.</p>
+                        <p class="text-sm text-slate-500 mb-6">Ma'lumotlaringizni qoldiring, bosh buxgalterimiz sizga
+                            qo'ng'iroq qiladi.</p>
 
                         <form id="contact-form" onsubmit="handleFormSubmit(event, 'contact')" class="space-y-4">
                             <div>
                                 <label class="block text-sm font-semibold text-navy-900 mb-1.5">Ismingiz *</label>
-                                <input type="text" required placeholder="Masalan: Sardor Alimov" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm">
+                                <input type="text" required placeholder="Masalan: Sardor Alimov"
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-navy-900 mb-1.5">Telefon raqamingiz *</label>
-                                <input type="tel" required value="+998 " pattern="\+998\s?[0-9]{2}\s?[0-9]{3}-?[0-9]{2}-?[0-9]{2}" placeholder="+998 90 123-45-67" class="phone-input w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm font-medium">
+                                <label class="block text-sm font-semibold text-navy-900 mb-1.5">Telefon raqamingiz
+                                    *</label>
+                                <input type="tel" required value="+998 "
+                                    pattern="\+998\s?[0-9]{2}\s?[0-9]{3}-?[0-9]{2}-?[0-9]{2}"
+                                    placeholder="+998 90 123-45-67"
+                                    class="phone-input w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm font-medium">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-semibold text-navy-900 mb-1.5">Savolingiz yoki korxona turi (ixtiyoriy)</label>
-                                <textarea rows="3" placeholder="MChJ ochish, QQS hisoboti yoki oylik xizmat narxi bo'yicha..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm"></textarea>
+                                <label class="block text-sm font-semibold text-navy-900 mb-1.5">Savolingiz yoki korxona
+                                    turi (ixtiyoriy)</label>
+                                <textarea rows="3"
+                                    placeholder="MChJ ochish, QQS hisoboti yoki oylik xizmat narxi bo'yicha..."
+                                    class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none transition-all text-sm"></textarea>
                             </div>
 
-                            <button type="submit" class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2">
+                            <button type="submit"
+                                class="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg shadow-emerald-600/25 transition-all flex items-center justify-center gap-2">
                                 <span>Arizani yuborish</span>
                                 <i data-lucide="send" class="w-4 h-4"></i>
                             </button>
@@ -794,7 +947,8 @@
 
     <!-- ==================== FOOTER ==================== -->
     <footer class="bg-navy-950 text-slate-400 py-12 border-t border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white">
                     <i data-lucide="calculator" class="w-5 h-5"></i>
@@ -815,9 +969,11 @@
     </footer>
 
     <!-- ==================== MODAL OYNA (ARIZA QOLDIRISH) ==================== -->
-    <div id="order-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-sm">
+    <div id="order-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-navy-950/75 backdrop-blur-sm">
         <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative animate-[fadeIn_0.2s_ease-out]">
-            <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors">
+            <button onclick="closeModal()"
+                class="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
@@ -826,23 +982,28 @@
             </div>
 
             <h3 id="modal-title" class="text-xl font-bold text-navy-900">Bepul maslahat olish</h3>
-            <p class="text-sm text-slate-500 mt-1 mb-6">Telefon raqamingizni qoldiring, mutaxassisimiz 15 daqiqada siz bilan bog'lanadi.</p>
+            <p class="text-sm text-slate-500 mt-1 mb-6">Telefon raqamingizni qoldiring, mutaxassisimiz 15 daqiqada siz
+                bilan bog'lanadi.</p>
 
             <form id="modal-form" onsubmit="handleFormSubmit(event, 'modal')" class="space-y-4">
                 <input type="hidden" id="modal-subject" value="Umumiy maslahat">
                 <div>
                     <label class="block text-sm font-semibold text-navy-900 mb-1">Ismingiz *</label>
-                    <input type="text" required placeholder="Ismingizni kiriting" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm">
+                    <input type="text" required placeholder="Ismingizni kiriting"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm">
                 </div>
 
                 <div>
                     <label class="block text-sm font-semibold text-navy-900 mb-1">Telefon raqamingiz *</label>
-                    <input type="tel" required value="+998 " placeholder="+998 90 123-45-67" class="phone-input w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm font-medium">
+                    <input type="tel" required value="+998 " placeholder="+998 90 123-45-67"
+                        class="phone-input w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 outline-none text-sm font-medium">
                 </div>
 
-                <div id="modal-calc-summary" class="hidden p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600"></div>
+                <div id="modal-calc-summary"
+                    class="hidden p-3 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600"></div>
 
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 transition-all">
+                <button type="submit"
+                    class="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 transition-all">
                     Qo'ng'iroq buyurtma qilish
                 </button>
             </form>
@@ -850,8 +1011,10 @@
     </div>
 
     <!-- ==================== TASDIQLASH XABARI (TOAST / NOTIFICATION) ==================== -->
-    <div id="success-toast" class="fixed bottom-6 right-6 z-50 hidden max-w-sm bg-navy-900 text-white p-4 rounded-2xl shadow-2xl border border-emerald-500/40 flex items-start gap-3.5 transition-all">
-        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+    <div id="success-toast"
+        class="fixed bottom-6 right-6 z-50 hidden max-w-sm bg-navy-900 text-white p-4 rounded-2xl shadow-2xl border border-emerald-500/40 flex items-start gap-3.5 transition-all">
+        <div
+            class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
             <i data-lucide="check-circle" class="w-5 h-5"></i>
         </div>
         <div>
@@ -908,7 +1071,7 @@
             const activeBtn = document.getElementById('btn-' + type);
             activeBtn.classList.remove('border-slate-200');
             activeBtn.classList.add('border-emerald-600', 'bg-emerald-50/50');
-            
+
             calculateResult();
         }
 
@@ -949,7 +1112,7 @@
             // Xodimlar va hujjatlar soniga qarab qo'shimcha narx
             const empCost = Math.max(0, emp - 2) * 85000;
             const docsCost = Math.max(0, docs - 15) * 12000;
-            
+
             // Yaxlitlash (50 000 so'mgacha)
             const totalServicePrice = Math.round((basePrice + empCost + docsCost) / 50000) * 50000;
 
@@ -1002,7 +1165,7 @@
         function openModal(title, summaryText = '') {
             modalTitle.textContent = title;
             modalSubject.value = title;
-            
+
             if (summaryText) {
                 modalCalcSummary.innerHTML = summaryText;
                 modalCalcSummary.classList.remove('hidden');
@@ -1033,19 +1196,19 @@
 
         // 5. Telefon raqami formatlash (+998 XX XXX-XX-XX)
         document.querySelectorAll('.phone-input').forEach(input => {
-            input.addEventListener('input', function(e) {
+            input.addEventListener('input', function (e) {
                 let val = e.target.value.replace(/\D/g, '');
                 if (!val.startsWith('998')) {
                     val = '998' + val;
                 }
                 val = val.substring(0, 12);
-                
+
                 let formatted = '+998';
                 if (val.length > 3) formatted += ' ' + val.substring(3, 5);
                 if (val.length > 5) formatted += ' ' + val.substring(5, 8);
                 if (val.length > 8) formatted += '-' + val.substring(8, 10);
                 if (val.length > 10) formatted += '-' + val.substring(10, 12);
-                
+
                 e.target.value = formatted;
             });
         });
@@ -1056,11 +1219,11 @@
 
         function handleFormSubmit(event, source) {
             event.preventDefault();
-            
+
             if (source === 'modal') {
                 closeModal();
             }
-            
+
             // Formani tozalash
             event.target.reset();
             const phoneField = event.target.querySelector('.phone-input');
@@ -1079,4 +1242,5 @@
         }
     </script>
 </body>
+
 </html>
